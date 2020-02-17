@@ -1,0 +1,15 @@
+<h1> PR Analytics </h1>
+
+<% if pull_requests.any? %>
+  <div id="prs">
+    <% pull_requests.each do |pr| %>
+      <div class="pr">
+        <h2><%= pr.title %></h2>
+        <p><%= pr.author %></p>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p class="placeholder">There are no PRs yet.</p>
+<% end %>
+<a href="/pull_requests/new">New PR</a>
